@@ -18,6 +18,10 @@ function App() {
 
   const [showQuestion, setShowQuestion] = useState(false);
 
+  const handleClickResetScore = (e) => {
+    setScore(0);
+  }
+
   const handleScore = (e) => {
     console.log(e.target.name);
     console.log(e.target.name === "inc" ? questionObj.points :  questionObj.points*-1)
@@ -31,7 +35,7 @@ function App() {
     setQuestionObj({ ...questionObj, showQuestion: !showQuestion })
   }
 
-  const handleClick = async () => {
+  const handleClickNewQuestion = async () => {
       const URL = "http://jservice.io/api/random";
       setShowQuestion(false);
       try {
@@ -40,7 +44,7 @@ function App() {
         console.log(data);
         if (!data[0].value || !data[0].answer || !data[0].question || !data[0].category.title) {
           console.log("tried again");
-          handleClick();
+          handleClickNewQuestion();
         } else {
         const obj = {
           question: data[0].question,
@@ -68,7 +72,8 @@ function App() {
           <React.Fragment>
           </React.Fragment>
       }
-      <button onClick={handleClick}>Random Trivia Question</button>
+      <button onClick={handleClickNewQuestion}>Random Trivia Question</button>
+      <button onClick={handleClickResetScore}>Reset Score</button>
       <Question questionObj={questionObj} handleToggle={handleToggle} />
     </div>
   );
