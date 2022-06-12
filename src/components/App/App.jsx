@@ -64,6 +64,9 @@ function App() {
   }
   return (
     <div className="App">
+      <h1 className="app-title" >
+        Jeopardy!
+      </h1>
       <div>
         <Box  minWidth={(theme) => theme.breakpoints.values.lg}
           sx={{
@@ -71,8 +74,6 @@ function App() {
             flexWrap: 'wrap',
             alignContent: 'center',
             justifyContent: 'center',
-            p: 1,
-            m: 1,
             maxWidth: 1,
             height: 800,
             borderRadius: 1,
@@ -81,7 +82,6 @@ function App() {
           <Paper elevation={24}
             sx={{
               display: 'flex',
-              flexWrap: 'wrap',
               maxWidth: .8,
               minWidth:.8,
               height: 600,
@@ -89,7 +89,6 @@ function App() {
               alignContent: 'center',
               justifyContent: 'center',
               bgcolor: '#8E44BB',
-              p: 2
             }}>
             <div>
               <h1>Score: {score}</h1>
