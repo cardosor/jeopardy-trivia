@@ -1,0 +1,14 @@
+body{
+    background-color: #71BB44;
+}
+
+.right-wrong-container{
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.center-btn-container{
+    display: flex;
+    justify-content: center;
+}
